@@ -1,0 +1,34 @@
+{
+  "name": "rule-validation-api",
+  "version": "1.0.0",
+  "description": "flutterwave challenge",
+  "main": "index.js",
+  "repository": "https://github.com/dushimeemma/rule-validation-api.git",
+  "author": "Emma Dushime",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn run build && node dist/index.js",
+    "dev": "nodemon --exec babel-node index.js",
+    "build": "babel index.js -d dist",
+    "test": "NODE_ENV=test nyc --reporter=html --reporter=text mocha --timeout 10000 -r @babel/register test/*  --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "coveralls": "^3.1.0",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.7",
+    "nyc": "^15.1.0"
+  }
+}
