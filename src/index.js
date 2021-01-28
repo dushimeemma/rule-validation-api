@@ -2,6 +2,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 
+import routes from './routes';
+
 dotenv.config();
 
 const app = express();
@@ -24,6 +26,8 @@ app.get('/', (req, res) => {
     },
   });
 });
+
+app.use('/validate-rule', routes);
 
 app.use((req, res) => {
   res.status(404).json({
